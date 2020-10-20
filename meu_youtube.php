@@ -22,10 +22,12 @@ class Meu_youtube{
   private function __construct(){
      add_shortcode('youtube',array($this,'youtube'));
   }
- public function youtube(){
+ public function youtube($parametros){
+  $a = shortcode_atts(array('canal' => ''),$parametros);
+  $canal = $a['canal'];
   return '
-    <script src="http://apis.google.com/js/platform.js"></script>
-    <div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="default" 
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <div class="g-ytsubscribe" data-channel="'.$canal.'" data-layout="default" 
 
     data-count="default"></div>
 
@@ -34,5 +36,5 @@ class Meu_youtube{
       
   }
 
-}
+
 Meu_youtube::getInstance();
