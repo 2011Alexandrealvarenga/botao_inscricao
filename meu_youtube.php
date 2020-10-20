@@ -20,11 +20,18 @@ class Meu_youtube{
     return self::$instance;
   }
   private function __construct(){
-     
+     add_shortcode('youtube',array($this,'youtube'));
   }
- 
+ public function youtube(){
+  return '
+    <script src="http://apis.google.com/js/platform.js"></script>
+    <div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="default" 
+
+    data-count="default"></div>
+
+  ';
+ }
       
-    ));
   }
 
 }
