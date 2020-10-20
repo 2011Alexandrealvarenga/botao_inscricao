@@ -11,7 +11,7 @@ License: GLPV2
 Text Domain: segundo plugin
 */
 
-class Filmes_reviews{
+class Meu_youtube{
   private static $instance;
   public static function getInstance(){
     if(self::$instance == NULL){
@@ -28,3 +28,4 @@ class Filmes_reviews{
   }
 
 }
+Meu_youtube::getInstance();
